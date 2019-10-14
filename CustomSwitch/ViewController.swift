@@ -22,8 +22,10 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             if self.buttonCenterX.constant > 0 {
                 self.buttonCenterX.constant -= 150
+                self.switchView.backgroundColor = UIColor.systemGray
             } else {
                 self.buttonCenterX.constant += 150
+                self.switchView.backgroundColor = UIColor.systemBlue
             }
             self.view.layoutIfNeeded()
         }
@@ -34,6 +36,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         buttonCenterX.constant = -75
+        
+        switchBtn.layer.cornerRadius = switchBtn.bounds.width / 2
+        switchView.layer.cornerRadius = switchView.bounds.height / 2
     }
 
 
